@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Birthday Gift ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      min-height: 100vh;
+      text-align: center;
+      color: #fff;
+    }
+
+    .login {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 25px;
+    }
+
+    .login-box {
+      background: rgba(255,255,255,0.2);
+      padding: 35px 25px;
+      border-radius: 25px;
+      backdrop-filter: blur(10px);
+      width: 90%;
+      max-width: 400px;
+    }
+
+    h1 {
+      font-size: 32px;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      margin: 15px 0;
+      text-align: center;
+      font-size: 18px;
+      outline: none;
+    }
+
+    button {
+      border: none;
+      background: #fff;
+      color: #e75480;
+      padding: 13px 30px;
+      border-radius: 25px;
+      font-size: 18px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    #error {
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    .gift {
+      display: none;
+      padding: 30px 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.2);
+      margin: 20px auto;
+      padding: 25px;
+      border-radius: 25px;
+      max-width: 700px;
+      backdrop-filter: blur(8px);
+    }
+
+    .photos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .photos img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    video {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 20px;
+    }
+
+    .heart {
+      font-size: 45px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- شاشة الباسورد -->
+  <div class="login" id="login">
+
+    <div class="login-box">
+
+      <div class="heart">❤️</div>
+
+      <h1>عندي ليكي هدية 🎁</h1>
+
+      <p>اكتبي الباسورد عشان تفتحي الهدية</p>
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Password"
+      >
+
+      <button onclick="openGift()">افتحي الهدية 💝</button>
+
+      <p id="error"></p>
+
+    </div>
+
+  </div>
+
+
+  <!-- محتوى الهدية -->
+  <div class="gift" id="gift">
+
+    <h1>🎂 Happy Birthday 🎂</h1>
+
+    <div class="card">
+
+      <div class="heart">❤️</div>
+
+      <h2>كل سنة وإنتي طيبة ❤️</h2>
+
+      <p>
+        النهارده يوم مميز جدًا،
+        وعشان كده حبيت أعملك حاجة تفضل ذكرى حلوة عندك.
+        🎁❤️
+      </p>
+
+    </div>
+
+
+    <!-- الصور -->
+    <div class="card">
+
+      <h2>📸 ذكرياتنا</h2>
+
+      <div class="photos">
+
+        <img src="photo1.jpg">
+        <img src="photo2.jpg">
+        <img src="photo3.jpg">
+        <img src="photo4.jpg">
+
+      </div>
+
+    </div>
+
+
+    <!-- الفيديو -->
+    <div class="card">
+
+      <h2>🎥 فيديوهات وذكريات</h2>
+
+      <video controls>
+        <source src="video.mp4" type="video/mp4">
+        المتصفح لا يدعم تشغيل الفيديو.
+      </video>
+
+    </div>
+
+
+    <!-- الرسالة -->
+    <div class="card">
+
+      <h2>💌 رسالة ليكي</h2>
+
+      <p>
+        أتمنى السنة الجديدة من عمرك تكون مليانة
+        فرحة ونجاح وذكريات حلوة.
+        وتفضلي دايمًا مبسوطة ❤️
+      </p>
+
+      <div class="heart">💖</div>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    function openGift() {
+
+      const password =
+        document.getElementById("password").value;
+
+      if (password === "LOVE") {
+
+        document.getElementById("login").style.display = "none";
+
+        document.getElementById("gift").style.display = "block";
+
+      } else {
+
+        document.getElementById("error").innerText =
+          "الباسورد غلط 😅 جربي تاني ❤️";
+
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>
